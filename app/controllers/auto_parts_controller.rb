@@ -1,18 +1,23 @@
 class AutoPartsController < ApplicationController
   before_action :set_auto_part, only: [:show, :edit, :update, :destroy]
-  def order
+
+  def by_price
+    @auto_parts = AutoPart.all
     @order = AutoPart.all.order(:price)
   end
 
   def by_make
     @auto_parts = AutoPart.where(vehicle_make: params[:vehicle_make])
+
     if params[:vehicle_model]
       @auto_parts =@auto_parts.where(vehicle_model: params[:vehicle_model])
     end
   end
+
   def by_model
     @auto_parts = AutoPart.where(vehicle_model: params[:vehicle_model])
   end
+
   # GET /auto_parts
   # GET /auto_parts.json
   def index
