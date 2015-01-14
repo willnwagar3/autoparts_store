@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   resources :auto_parts
-get 'parts/by-make/:vehicle_make' => 'auto_parts#by_make'
-get 'parts/by-model/:vehicle_model' =>'auto_parts#by_model'
+
+  get 'parts/by-make/:vehicle_make' => 'auto_parts#by_make'
+  get 'parts/by-model/:vehicle_model' =>'auto_parts#by_model'
+  get 'parts/by-price' => 'auto_parts#by_price'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

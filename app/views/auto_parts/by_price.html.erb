@@ -13,7 +13,7 @@
   </thead>
 
   <tbody>
-    <% @auto_parts.last(4).each do |auto_part| %>
+    <% @auto_parts.order('price').each do |auto_part| %>
       <tr>
         <td><%= auto_part.name %></td>
         <td><%= auto_part.description %></td>
